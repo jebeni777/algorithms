@@ -3,11 +3,15 @@ function countVowels(str) {
     let vowels = "aeiou";
   
     str = str.toLowerCase();
+    // This solution doesn't account for 'y'
     for (let i = 0; i < str.length; i++) {
-      if (vowels.indexOf(str[i]) !== -1 ||
-         str[i] === "y" && vowels.indexOf(str[i+1]) === -1) {
+      if (vowels.includes(str[i])) {
         count++
       }
+      // if (vowels.indexOf(str[i]) !== -1 ||
+      //    str[i] === "y" && vowels.indexOf(str[i+1]) === -1) {
+      //   count++
+      // }
     }
     return count
   }
